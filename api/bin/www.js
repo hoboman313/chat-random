@@ -10,7 +10,7 @@ var app  = require('../app'),
     chat = require('../routes/chat');
 
 // get port from environment and store in Express.
-var port = normalizePort('3000');
+var port = normalizePort(process.env.PORT || normalizePort('3000'));
 app.set('port', port);
 
 // create HTTP server.
