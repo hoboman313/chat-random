@@ -1,6 +1,5 @@
 # chat-random
 
-
 ## Purpose
 Write an application, Chat Random, which allows two random users to chat with each other via text from their browser. When a user visits the webpage, if there are no other users available, let them know they're in line to talk to the very next person who joins the site. Otherwise, pair them up and let them chat! No need for accounts, a user can use a nickname of their choosing when they load the webpage and doesn't need to be remembered between visits.
 
