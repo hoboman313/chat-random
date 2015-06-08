@@ -1,0 +1,10 @@
+<ul>
+{{#each row in historyMessages}}
+  {{#unless row.isLeaveMsg}}
+      <li {{bind-attr class=row.className}}>{{row.userName}}: {{row.message}}</li>
+  {{else}}
+      <li {{bind-attr class=row.className}}>{{row.userName}} has left the chat room.</li>
+  {{/unless}}
+
+{{/each}}
+</ul>

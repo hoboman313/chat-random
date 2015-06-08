@@ -1,0 +1,12 @@
+{{#if isChatting}}
+  {{chat-history historyMessage=historyMessage}}
+  {{chat-input enterInputText="sendMessage" endOfChat=endOfChat}}
+{{else}}
+    <div class="vert-centered">
+      {{#if isReadyToChat}}
+          Waiting for more people to connect...
+      {{else}}
+        {{username-input enterUsername="readyToChat"}}
+      {{/if}}
+    </div>
+{{/if}}
