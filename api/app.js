@@ -1,9 +1,8 @@
 // Library imports
 var express      = require('express'),
     logger       = require('morgan'),
-    cookieParser = require('cookie-parser'),
-    bodyParser   = require('body-parser'),
-    compression  = require('compression');
+    compression  = require('compression'),
+    path         = require('path');
 
 var app = express();
 
@@ -11,8 +10,12 @@ var app = express();
 app.use(compression());
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+
+var webContentPath = path.join(__dirname, '..', 'web', 'dist');
+
+app.use(express.static(webContentPath));
+app.get('/', function(req, res){
+    res.sendFile(path.join(webContentPath, 'index.html'));
+});
 
 module.exports = app;
